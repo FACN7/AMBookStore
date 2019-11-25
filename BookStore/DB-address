@@ -1,0 +1,3 @@
+mongodb+srv://AM:AM1234@cluster0-2kazw.mongodb.net/test?retryWrites=true&w=majority
+
+mongodb://localhost:27017/AMBookStore
