@@ -1,3 +1,2 @@
-mongodb+srv://AM:AM1234@cluster0-2kazw.mongodb.net/test?retryWrites=true&w=majority
-
-mongodb://localhost:27017/AMBookStore
+mongodb+srv://AM:<password>@amprojectcluster-s1qf7.mongodb.net/test?retryWrites=true&w=majority
+DATABASE=mongodb://localhost:27017/AMBookStore
