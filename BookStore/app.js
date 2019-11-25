@@ -18,21 +18,11 @@ mongoose.connect(process.env.DATABASE, {
 }).then(() => console.log('DB CONNECTED'))
 
 
-
-
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(expressValidator());
-
-
 app.use('/api', userRoutes);
-
-
-
-
-
-
 
 const port = process.env.PORT || 8000;
 
