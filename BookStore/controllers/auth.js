@@ -22,6 +22,7 @@ exports.signup = (req, res) => {
 };
 
 
+
 exports.signin = (req, res) => {
 
     const { email, password } = req.body;
@@ -43,6 +44,7 @@ exports.signout = (req, res) => {
     res.clearCookie('c');
     res.json({ message: 'Signout succeeded!' })
 }
+
 
 exports.requireSignin = expressJwt({
     secret: process.env.JWT_SECRET,
