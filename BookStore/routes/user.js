@@ -2,12 +2,13 @@ const express = require('express');
 const router = express.Router();
 
 const { requireSignin, isAuth, isAdmin } = require('../controllers/auth');
-const { userById } = require('../controllers/user');
+const { userById, read, update } = require('../controllers/user');
 
-//test
-router.get('/test/:userId', requireSignin, isAuth, (req, res) => {
-    res.json({ user: req.user });
-})
+
+router.get('/user/:userId', requireSignin, isAuth, read);
+router.put('/user/:userId', requireSignin, isAuth, update);
+
+
 
 router.param('userId', userById);
 
