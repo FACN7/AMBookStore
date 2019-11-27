@@ -34,7 +34,8 @@ exports.signin = (req, res) => {
             return res.status(401).json({ error: 'Wrong Email or password!' })
         }
         const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET);
-        res.cookie('c', token, { expire: new Date() + 9999 });
+        const threeHoursFromNow = new Date() + 9999;
+        res.cookie('c', token, { expire: threeHoursFromNow });
         const { _id, name, email, role } = user;
         return res.json({ token, user: { _id, name, email, role } });
     })
@@ -52,7 +53,7 @@ exports.requireSignin = expressJwt({
 });
 
 exports.isAuth = (req, res, next) => {
-    let user = req.profile && req.auth && req.profile._id == req.auth._id;
+    const user = req.user && req.auth && req.user._id == req.auth._id;
     if (!user) {
         return res.status(403).json({
             error: "Access denied"
@@ -62,7 +63,7 @@ exports.isAuth = (req, res, next) => {
 };
 
 exports.isAdmin = (req, res, next) => {
-    if (res.profile.role === 0) {
+    if (req.user.role === 0) {
         return res.status(403).json({
             error: "Admin only! access denied"
         })
