@@ -6,7 +6,7 @@ const { userById } = require('../controllers/user');
 
 //test
 router.get('/test/:userId', requireSignin, isAuth, (req, res) => {
-    res.json({ user: req.profile });
+    res.json({ user: req.user });
 })
 
 router.param('userId', userById);
