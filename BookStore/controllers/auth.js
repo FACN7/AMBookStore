@@ -5,7 +5,6 @@ const jwt = require('jsonwebtoken');
 const expressJwt = require('express-jwt');
 
 exports.signup = (req, res) => {
-
     const user = new User(req.body);
     user.save((err, user) => {
         if (err) {
