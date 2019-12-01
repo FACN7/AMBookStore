@@ -1,0 +1,19 @@
+{
+  "name": "ambookstore",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FACN7/AMBookStore.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FACN7/AMBookStore/issues"
+  },
+  "homepage": "https://github.com/FACN7/AMBookStore#readme"
+}
