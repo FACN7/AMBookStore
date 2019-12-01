@@ -1,7 +1,7 @@
 
 
 export const signup = (user) => {
-    return fetch(`/signup`, {
+    return fetch(`/api/signup`, {
         method: "POST",
         headers: {
             Accept: 'application/json',
@@ -16,7 +16,7 @@ export const signup = (user) => {
 }
 
 export const signin = (user) => {
-    return fetch(`/signin`, {
+    return fetch(`/api/signin`, {
         method: "POST",
         headers: {
             Accept: 'application/json',
@@ -41,7 +41,7 @@ export const signout = (cb) => {
     if (typeof window !== 'undefined') {
         localStorage.removeItem('jwt');
         cb();
-        return fetch(`/signout`, {
+        return fetch(`/api/signout`, {
             method: 'GET'
         }).then(response => {
             console.log('signout', response);
