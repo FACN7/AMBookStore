@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": ""
+    "start": "cd BookStore && npm start",
+    "install-be": "cd BookStore && npm i",
+    "install-fe": "cd bookstore-front && npm i && npm run build",
+    "heroku-prebuild": "npm run install-be && npm run install-fe"
   },
   "repository": {
     "type": "git",
