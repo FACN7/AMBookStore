@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import ShowImage from './ShowImage';
 import moment from 'moment';
 
+
 const Card = ({ product, showViewProductButton = true, showFullDescription = false }) => {
 
 
@@ -17,6 +18,11 @@ const Card = ({ product, showViewProductButton = true, showFullDescription = fal
             )
         )
     };
+
+
+
+
+
 
     const showAddToCartButton = () => {
         return (

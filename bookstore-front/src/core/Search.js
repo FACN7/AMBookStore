@@ -35,7 +35,6 @@ const Search = () => {
     }, []);
 
     const searchData = () => {
-        //console.log(search, category);
         if (search) {
             list({ search: search || undefined, category: category })
                 .then(response => {
@@ -109,14 +108,6 @@ const Search = () => {
             </span>
         </form>
     );
-
-
-
-
-
-
-
-
 
     return (
         <div className='row'>
