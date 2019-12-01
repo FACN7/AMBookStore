@@ -141,9 +141,5 @@ const Shop = () => {
     )
 }
 
-<<<<<<< HEAD
-export default Shop;
-=======
 export default Shop;
 
->>>>>>> 395c2c36972630ae847e1920360fdf4635dbca55
