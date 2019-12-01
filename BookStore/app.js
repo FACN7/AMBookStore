@@ -20,7 +20,8 @@ const app = express();
 mongoose.connect(process.env.DATABASE, {
     useNewUrlParser: true,
     useCreateIndex: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    dbName: process.env.DB_NAME
 }).then(() => console.log('DB CONNECTED'))
 
 app.use(cors());
