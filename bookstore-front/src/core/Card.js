@@ -13,9 +13,8 @@ const Card = ({
     cartUpdate = false,
     showRemoveProductButton = false,
     showFullDescription = false,
-    setRun = f => f,
-    run = undefined
-    // changeCartSize
+    setRun,
+    run
 }) => {
     const [redirect, setRedirect] = useState(false);
     const [count, setCount] = useState(product.count);
@@ -31,7 +30,6 @@ const Card = ({
     };
 
     const addToCart = () => {
-        // console.log('added');
         addItem(product, setRedirect(true));
     };
 
@@ -60,7 +58,7 @@ const Card = ({
     };
 
     const handleChange = productId => event => {
-        setRun(!run); // run useEffect in parent Cart
+        setRun(!run);
         setCount(event.target.value < 1 ? 1 : event.target.value);
         if (event.target.value >= 1) {
             updateItem(productId, event.target.value);
@@ -95,7 +93,7 @@ const Card = ({
                 <button
                     onClick={() => {
                         removeItem(product._id);
-                        setRun(!run); // run useEffect in parent Cart
+                        setRun(!run);
                     }}
                     className="btn btn-outline-danger mt-2 mb-2"
                 >

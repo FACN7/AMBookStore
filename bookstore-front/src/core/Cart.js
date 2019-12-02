@@ -8,11 +8,9 @@ import Checkout from './Checkout';
 
 const Cart = () => {
     const [items, setItems] = useState([]);
-    // const [cartSize, setCartSize] = useState([]);
     const [run, setRun] = useState(false);
 
     useEffect(() => {
-        console.log('MAX DEPTH ...');
         setItems(getCart());
     }, [run]);
 
