@@ -12,15 +12,20 @@
     margin-bottom: 50px;
   }
 
-
-
-
 .btn,.jumbotron,.nav :hover {
     border-radius:0px;
 }
 
 .product-img{
     min-height: 100px;
+}
+
+.cart-badge{
+    border-radius: 40%;
+    padding: 3px;
+    font-size: 15px;
+    font-weight: bold;
+    background: red;
 }
 
 .jumbotron h2{
