@@ -1,0 +1,22 @@
+{
+  "name": "ambookstore",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd BookStore && npm start",
+    "install-be": "cd BookStore && npm i",
+    "install-fe": "cd bookstore-front && npm i && npm run build",
+    "heroku-prebuild": "npm run install-be && npm run install-fe"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FACN7/AMBookStore.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FACN7/AMBookStore/issues"
+  },
+  "homepage": "https://github.com/FACN7/AMBookStore#readme"
+}
