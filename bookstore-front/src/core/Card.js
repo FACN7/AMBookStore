@@ -13,8 +13,8 @@ const Card = ({
     cartUpdate = false,
     showRemoveProductButton = false,
     showFullDescription = false,
-    setRun,
-    run
+    setRun = f => f,
+    run = undefined
 }) => {
     const [redirect, setRedirect] = useState(false);
     const [count, setCount] = useState(product.count);
@@ -35,9 +35,12 @@ const Card = ({
 
     const shouldRedirect = redirect => {
         if (redirect) {
-            return <Redirect to="/cart" />;
+            window.scrollTo(0, 0);
+            return <Redirect to="/shop" />;
         }
     };
+
+
 
     const showAddToCartBtn = showAddToCartButton => {
         return (
