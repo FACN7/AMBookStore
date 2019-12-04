@@ -95,7 +95,7 @@ const Card = ({
                         removeItem(product._id);
                         setRun(!run);
                     }}
-                    className="btn btn-outline-danger mt-2 mb-2"
+                    className="btn btn-danger mt-2 mb-2"
                 >
                     Remove Product
         </button>
