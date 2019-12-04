@@ -14,7 +14,7 @@ const Card = ({
     showRemoveProductButton = false,
     showFullDescription = false,
     setRun,
-    run = undefined
+    run
 }) => {
     const [redirect, setRedirect] = useState(false);
     const [count, setCount] = useState(product.count);
