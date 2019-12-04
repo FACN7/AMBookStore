@@ -238,7 +238,6 @@ exports.listSearch = (req, res) => {
 };
 
 exports.decreaseQuantityIncreaseSold = (req, res, next) => {
-    console.log(req.body.order.products)
     const bulkOps = req.body.order.products.map(item => {
         return {
             updateOne: {
