@@ -50,7 +50,7 @@ exports.addOrderToUserHistory = (req, res, next) => {
         });
     })
     User.findOneAndUpdate({ _id: req.user._id },
-        { $push: { history: history } },
+        { $push: { history } },
         { new: true },
         (error, data) => {
             if (error) return res.status(400).json({ error: 'could not update user purchase history' })
