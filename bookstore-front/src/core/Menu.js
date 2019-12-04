@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { signout, isAuthenticated } from '../auth/index';
-import { itemTotal, emptyCart } from './cartHelper';
+import { itemTotal } from './cartHelper';
 
 const isActive = (history, path) => {
     if (history.location.pathname === path) {
@@ -58,7 +58,6 @@ const Menu = ({ history }) => (
                     <span className="nav-link"
                         style={{ cursor: 'pointer', color: '#fff' }}
                         onClick={() => signout(() => {
-                            emptyCart();
                             history.push('/');
                         })}>
                         Signout
