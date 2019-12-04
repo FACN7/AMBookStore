@@ -35,9 +35,12 @@ const Card = ({
 
     const shouldRedirect = redirect => {
         if (redirect) {
-            return <Redirect to="/cart" />;
+            window.scrollTo(0, 0);
+            return <Redirect to="/shop" />;
         }
     };
+
+
 
     const showAddToCartBtn = showAddToCartButton => {
         return (

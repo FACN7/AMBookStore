@@ -40,6 +40,7 @@ export const authenticate = (data, cb) => {
 export const signout = (cb) => {
     if (typeof window !== 'undefined') {
         localStorage.removeItem('jwt');
+        localStorage.removeItem('cart_false');
         cb();
         return fetch(`/api/signout`, {
             method: 'GET'
