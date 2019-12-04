@@ -1,4 +1,6 @@
-const User = require('../models/user')
+const User = require('../models/user');
+const { Order } = require('../models/order');
+const { errorHandler } = require('../helpers/dbErrorHandler');
 
 exports.userById = (req, res, next, id) => {
     User.findById(id).exec((err, user) => {
@@ -41,7 +43,7 @@ exports.addOrderToUserHistory = (req, res, next) => {
             _id: item._id,
             name: item.name,
             description: item.description,
-            category: item.category,
+            category: item.category, Order,
             quantity: item.quantity,
             transaction_id: req.body.order.transaction_id,
             amount: req.body.amount
@@ -55,4 +57,18 @@ exports.addOrderToUserHistory = (req, res, next) => {
             next();
         }
     );
+};
+
+exports.purchaseHistory = (req, res) => {
+    Order.find({ user: req.user._id })
+        .populate('user', '_id name')
+        .sort('-created')
+        .exec((err, orders) => {
+            if (err) {
+                return res.status(400).json({
+                    error: errorHandler(err)
+                });
+            }
+            res.json(orders);
+        });
 };
