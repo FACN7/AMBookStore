@@ -84,15 +84,15 @@ exports.update = (req, res) => {
                 error: 'Image could not be uploaded'
             });
         }
-        const { name, description, price, category, quantity, shipping } = fields;
-        if (!name || !description || !price || !category || !quantity || !shipping) {
-            return res.status(400).json({
-                error: "all fields are required!"
-            });
-        }
+        // const { name, description, price, category, quantity, shipping } = fields;
+        // if (!name || !description || !price || !category || !quantity || !shipping) {
+        //     return res.status(400).json({
+        //         error: "all fields are required!"
+        //     });
+        // }
         //here instead of creating new product we are updating the one from the request
         //we are using loadash - a tool to update all the fields in the product with single line of code
-        const product = req.product;
+        let product = req.product;
         product = _.extend(product, fields);
 
         if (files.photo) {
