@@ -13,7 +13,7 @@ const Card = ({
     cartUpdate = false,
     showRemoveProductButton = false,
     showFullDescription = false,
-    setRun = f => f,
+    setRun,
     run = undefined
 }) => {
     const [redirect, setRedirect] = useState(false);
